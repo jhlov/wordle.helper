@@ -101,7 +101,7 @@ const Game = () => {
 
   return (
     <div className="game">
-      <h1 className="mt-2 mb-4">WORDLE HINT</h1>
+      <h1 className="mt-2 mb-4">WORDLE HELPER</h1>
 
       {/* word */}
       {wordList.map((word, rowIndex) => (

@@ -1,6 +1,6 @@
 {
-  "homepage": "https://jhlov.github.io/wordle.hint",
-  "name": "Wordle Hint",
+  "homepage": "https://jhlov.github.io/wordle.helper",
+  "name": "Wordle Helper",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

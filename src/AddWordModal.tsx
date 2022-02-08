@@ -76,6 +76,10 @@ const AddWordModal = (props: Props) => {
     }
   };
 
+  const isKo = () => {
+    return navigator.language.includes("ko");
+  };
+
   return (
     <Modal className="add-word-modal" show={props.show} onHide={props.onClose}>
       <Modal.Header closeButton>
@@ -84,8 +88,9 @@ const AddWordModal = (props: Props) => {
 
       <Modal.Body>
         <p>
-          글자 입력 후, 타일을 클릭하거나, 숫자키(1~5)를 눌러 타일의 색을 변경할
-          수 있습니다.
+          {isKo()
+            ? "글자 입력 후, 타일을 클릭하거나, 숫자키(1~5)를 눌러 타일의 색을 변경할수 있습니다."
+            : "After entering the letter, you can change the color of the tile by clicking on the tile or pressing the number key (1-5)."}
         </p>
         <div className="word mb-3">
           {tileList.map(tile => (

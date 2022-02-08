@@ -103,15 +103,25 @@ const Game = () => {
     setRecommendWordList([...rWordList]);
   }, [wordList]);
 
+  const isKo = () => {
+    return navigator.language.includes("ko");
+  };
+
   return (
     <div className="game">
       <h1 className="mt-2 mb-4">WORDLE HELPER</h1>
       <ul>
         <li>
-          WORDLE 정보를 입력하면, 정답으로 나올 수 있는 단어를 추천해 줍니다.
+          {isKo()
+            ? "WORDLE 정보를 입력하면, 정답으로 나올 수 있는 단어를 추천해 줍니다."
+            : "If you enter the WORDLE information, it recommends a word that can come out as the correct answer."}
         </li>
         {0 < wordList.length && (
-          <li>타일을 클릭해 타일의 색을 변경 할 수 있습니다.</li>
+          <li>
+            {isKo()
+              ? "타일을 클릭해 타일의 색을 변경 할 수 있습니다."
+              : "You can change the color of the tile by clicking on the tile."}
+          </li>
         )}
       </ul>
 
@@ -144,7 +154,9 @@ const Game = () => {
 
       {/* recommend word */}
       <p className="mt-4 mb-1">
-        {recommendWordList.length}개의 단어가 있습니다.
+        {isKo()
+          ? `${recommendWordList.length}개의 단어가 있습니다.`
+          : `There are ${recommendWordList.length} words.`}
       </p>
       <div className="recommend ">
         {recommendWordList.map(word => (

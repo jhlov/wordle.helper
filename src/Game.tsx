@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import _ from "lodash";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { AddWordModal } from "./AddWordModal";
 import "./Game.scss";
@@ -34,7 +34,11 @@ const Game = () => {
     setWordList(newWordList);
   };
 
-  const search = () => {
+  useEffect(() => {
+    if (wordList.length === 0) {
+      return;
+    }
+
     const rWordList = allWordList
       .map(word => word.toUpperCase())
       .filter(word =>
@@ -97,11 +101,19 @@ const Game = () => {
       );
 
     setRecommendWordList([...rWordList]);
-  };
+  }, [wordList]);
 
   return (
     <div className="game">
       <h1 className="mt-2 mb-4">WORDLE HELPER</h1>
+      <ul>
+        <li>
+          WORDLE 정보를 입력하면, 정답으로 나올 수 있는 단어를 추천해 줍니다.
+        </li>
+        {0 < wordList.length && (
+          <li>타일을 클릭해 타일의 색을 변경 할 수 있습니다.</li>
+        )}
+      </ul>
 
       {/* word */}
       {wordList.map((word, rowIndex) => (
@@ -130,18 +142,10 @@ const Game = () => {
         </div>
       )}
 
-      <div className="d-grid mt-4">
-        <Button variant="outline-primary" onClick={search}>
-          SEARCH
-        </Button>
-      </div>
-
       {/* recommend word */}
-      {0 < recommendWordList.length && (
-        <p className="mt-4 mb-1">
-          {recommendWordList.length}개의 단어가 있습니다.
-        </p>
-      )}
+      <p className="mt-4 mb-1">
+        {recommendWordList.length}개의 단어가 있습니다.
+      </p>
       <div className="recommend ">
         {recommendWordList.map(word => (
           <div key={word} className="recommend-word">

@@ -83,6 +83,10 @@ const AddWordModal = (props: Props) => {
       </Modal.Header>
 
       <Modal.Body>
+        <p>
+          글자 입력 후, 타일을 클릭하거나, 숫자키(1~5)를 눌러 타일의 색을 변경할
+          수 있습니다.
+        </p>
         <div className="word mb-3">
           {tileList.map(tile => (
             <div

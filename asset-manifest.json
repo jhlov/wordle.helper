@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/wordle.hint/static/css/main.858a94f9.chunk.css",
+    "main.js": "/wordle.hint/static/js/main.4ec325fa.chunk.js",
+    "runtime-main.js": "/wordle.hint/static/js/runtime-main.17c11276.js",
+    "static/js/2.b8b7ae9e.chunk.js": "/wordle.hint/static/js/2.b8b7ae9e.chunk.js",
+    "static/js/3.060792b3.chunk.js": "/wordle.hint/static/js/3.060792b3.chunk.js",
+    "index.html": "/wordle.hint/index.html",
+    "static/js/2.b8b7ae9e.chunk.js.LICENSE.txt": "/wordle.hint/static/js/2.b8b7ae9e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.17c11276.js",
+    "static/js/2.b8b7ae9e.chunk.js",
+    "static/css/main.858a94f9.chunk.css",
+    "static/js/main.4ec325fa.chunk.js"
+  ]
+}

@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { AddWordModal } from "./AddWordModal";
 import "./Game.scss";
 import { allWordList } from "./wordList";
+import AdSense from "react-adsense";
 
 export interface Tile {
   index: number;
@@ -151,6 +152,17 @@ const Game = () => {
           </Button>
         </div>
       )}
+
+      {/* google adsense */}
+      <div className="my-2">
+        <AdSense.Google
+          style={{ display: "block" }}
+          client="ca-pub-7150456660061561"
+          slot="1671889334"
+          format="auto"
+          responsive="true"
+        />
+      </div>
 
       {/* recommend word */}
       <p className="mt-4 mb-1">

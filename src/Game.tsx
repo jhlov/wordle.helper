@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import _ from "lodash";
 import React, { useEffect, useState } from "react";
+import AdSense from "react-adsense";
 import { Button } from "react-bootstrap";
 import { AddWordModal } from "./AddWordModal";
 import "./Game.scss";
 import { allWordList } from "./wordList";
-import AdSense from "react-adsense";
 
 export interface Tile {
   index: number;

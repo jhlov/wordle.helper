@@ -65,9 +65,9 @@ const Game = () => {
           if (0 < bTileList.length) {
             // b 인 글자가 있어야 된다
             if (
-              letterList.every(
-                letter => !bTileList.map(tile => tile.letter).includes(letter)
-              )
+              bTileList
+                .map(tile => tile.letter)
+                .some(letter => !letterList.includes(letter))
             ) {
               return false;
             }

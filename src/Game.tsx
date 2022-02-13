@@ -78,6 +78,24 @@ const Game = () => {
             ) {
               return false;
             }
+
+            // b + s 글자수만큼 추천단어에 있어야 한다.
+            if (
+              bTileList.some(bTile => {
+                const countInWord = letterList.filter(
+                  letter => letter === bTile.letter
+                ).length;
+                const countSB = row.filter(
+                  tile =>
+                    tile.letter === bTile.letter &&
+                    ["s", "b"].includes(tile.check)
+                ).length;
+
+                return countInWord < countSB;
+              })
+            ) {
+              return false;
+            }
           }
 
           // o 체크
@@ -154,15 +172,13 @@ const Game = () => {
       )}
 
       {/* google adsense */}
-      <div className="my-2">
-        <AdSense.Google
-          style={{ display: "block" }}
-          client="ca-pub-7150456660061561"
-          slot="1671889334"
-          format="auto"
-          responsive="true"
-        />
-      </div>
+      <AdSense.Google
+        className="my-2"
+        style={{ display: "inline-block", width: "100%", height: 90 }}
+        client="ca-pub-7150456660061561"
+        slot="1671889334"
+        format=""
+      />
 
       {/* recommend word */}
       <p className="mt-4 mb-1">
